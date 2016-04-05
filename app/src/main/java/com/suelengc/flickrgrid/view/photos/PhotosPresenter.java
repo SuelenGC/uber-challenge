@@ -9,6 +9,7 @@ import java.util.List;
 
 public class PhotosPresenter implements PhotosContract.UserActionListener {
 
+    public static final int FIRST_PAGE = 1;
     private PhotosContract.View view;
     private PhotosRepository repository;
 
@@ -21,7 +22,7 @@ public class PhotosPresenter implements PhotosContract.UserActionListener {
     public void loadPhotos(String query, int page) {
         this.view.setProgressIndicator(true);
 
-        if (page == 1) {
+        if (page == FIRST_PAGE) {
             this.view.cleanPhotos();
         }
 
